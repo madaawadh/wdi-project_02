@@ -5,3 +5,16 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+User.destroy_all
+Order.destroy_all
+Item.destroy_all
+Product.destroy_all
+Tag.destroy_all
+Recipe.destroy_all
+Ingredient.destroy_all
+
+tags = ["Breakfast", "Lunch", "Dinner", "Snack", "Dessert"]
+tags.each do |t|
+  Tag.create(tag: t)
+end

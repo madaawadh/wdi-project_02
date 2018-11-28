@@ -1,2 +1,10 @@
-<h1>Recipes#show</h1>
-<p>Find me in app/views/recipes/show.html.erb</p>
+
+
+<p><%= @recipe.title %></p>
+<img src=""><%= @recipe.image %></img>
+<p><%= @recipe.steps %></p>
+<p><%= @recipe.title %></p>
+
+<% @recipe.tags.each do |t| %>
+<%= link_to t.tag, tag_path(t) %>
+<% end %>

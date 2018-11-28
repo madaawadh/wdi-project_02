@@ -1,2 +1,15 @@
-<h1>Recipes#new</h1>
-<p>Find me in app/views/recipes/new.html.erb</p>
+
+<form id="recipe_form">
+<input type="text" id="title">
+<input type="text" id="steps">
+<input type="text" id="image">
+<input type="text" id="name">
+<input type="text" id="quan">
+<div>
+
+<% Tag.all.each do |t| %>
+<%= t.tag %><input type="checkbox" id=<%= t.id %> class=<%= t.tag %> >
+<% end %>
+</div>
+<input type="submit" >
+</form>
