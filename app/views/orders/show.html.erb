@@ -1,2 +1,7 @@
-<h1>Orders#show</h1>
-<p>Find me in app/views/orders/show.html.erb</p>
+<%@order.items.each do |i| %>
+<%= i.product.title %>
+
+<%end%>
+
+
+<button onclick="update()" class="btn" id=<%= @order.id %> >Done</button>

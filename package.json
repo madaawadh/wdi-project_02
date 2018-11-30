@@ -1,5 +1,7 @@
 {
   "name": "CeliacProject",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "unirest": "^0.5.1"
+  }
 }

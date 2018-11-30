@@ -1,2 +1,23 @@
-<h1>Products#show</h1>
-<p>Find me in app/views/products/show.html.erb</p>
+
+
+<p><%= @product.title %></p>
+<img src=""><%= @product.description %></img>
+<p id="price"><%= @product.price %></p>
+<p><%= @product.image %></p>
+
+
+<button onclick="fun()">add</button>
+<p id="quant"></p>
+
+<p id="productTry" hidden><%= @product.id %></p>
+<p id="totalPrice"></p>
+
+
+<div class="order">
+<%if current_user.orders.length===0||current_user.orders.last.completed==true %>
+<button onclick="cart()">Add</button>
+<% else %>
+<button onclick="order()" class="sameorder" id=<%= current_user.orders.last.id %>>Add</button>
+<% end %>
+
+</div>
