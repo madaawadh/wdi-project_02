@@ -13,6 +13,10 @@
  *= require_tree .
  *= require_self
  */
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 33048a4af090a8bd54f61533fc49ca0fcd7422dd
 header {
   /* padding: 50px 0; */
   display: flex;
@@ -54,8 +58,12 @@ iframe {
   position: absolute;
 }
 body {
+<<<<<<< HEAD
   background-image: url("https://ak0.picdn.net/shutterstock/videos/20563330/thumb/1.jpg");
   /* ("https://images.unsplash.com/photo-1526376043067-5af36c35cd6c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=aed342eea1c8593563be90e10c423dfe&w=1000&q=80"); */
+=======
+  background-image: url("https://www.brewsterwallcovering.com/images/thumbs/0012645_prato-light-grey-blotch-texture.jpeg");
+>>>>>>> 33048a4af090a8bd54f61533fc49ca0fcd7422dd
   margin: auto;
   /* margin-bottom: 100px; */
   min-height: 100vh;
@@ -240,3 +248,22 @@ h2 {
   background: #000000;
   color: white;
 }
+<<<<<<< HEAD
+=======
+=======
+ input#search{
+    background:none;
+    border: 4px solid whitesmoke;
+    padding:5px 10px;
+    outline:none;
+    color:black;
+    font-family: monospace;
+}
+input#search::placeholder{
+color:white;
+}
+.continer{
+    text-align:center;
+}
+>>>>>>> e4ebd100650eb4af637f2339be7d591d119732df
+>>>>>>> 33048a4af090a8bd54f61533fc49ca0fcd7422dd

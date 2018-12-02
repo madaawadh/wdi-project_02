@@ -1,10 +1,12 @@
 
 
 <p><%= @recipe.title %></p>
-<img src=""><%= @recipe.image %></img>
+<% @recipe.ingredients.each do |i| %>
+<%= i.quantity %> <%= i.name %>
+<%end %>
+<img src=<%= @recipe.image %> >
 <p><%= @recipe.steps %></p>
 <p><%= @recipe.title %></p>
-
 <% @recipe.tags.each do |t| %>
 <%= link_to t.tag, tag_path(t) %>
 <% end %>
