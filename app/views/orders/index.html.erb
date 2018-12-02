@@ -1,0 +1,5 @@
+<% @orders.each do |o| %>
+
+<%= link_to (o.created_at.strftime "%A, %B %d, %Y, %I:%M %P"), o %>
+
+<%end %>

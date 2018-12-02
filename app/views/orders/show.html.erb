@@ -1,2 +1,10 @@
-<h1>Orders#show</h1>
-<p>Find me in app/views/orders/show.html.erb</p>
+<% totalPrice=0 %>
+<%@order.items.each do |i| %>
+Title: <%= i.product.title %>
+Quantity: <%= i.quantity %>
+Price: <%= i.price %>
+<% totalPrice+=i.price %>
+
+<%end%>
+<div><%= @order.total_price %> Rs</div>
+

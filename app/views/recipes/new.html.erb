@@ -1,15 +1,24 @@
 
-<form id="recipe_form">
-<input type="text" id="title">
-<input type="text" id="steps">
-<input type="text" id="image">
-<input type="text" id="name">
-<input type="text" id="quan">
+
+Title: <input type="text" id="title">
+Steps: <input type="text" id="steps">
+image: <input type="text" id="image">
+<button onclick="addingredints()">more Ingredients</button>
+<div id="recipe_form">
+<span>Ingrediednt </span> <span> quant </span> <br>
+ <input type="text" id="name">
+<input type="text" id="quan"> <br>
+ <input type="text" id="name2">
+<input type="text" id="quan2"> <br>
+ <input type="text" id="name3">
+ <input type="text" id="quan3"><br>
+ <input type="text" id="name4">
+ <input type="text" id="quan4"><br>
+</div>
 <div>
 
 <% Tag.all.each do |t| %>
 <%= t.tag %><input type="checkbox" id=<%= t.id %> class=<%= t.tag %> >
 <% end %>
 </div>
-<input type="submit" >
-</form>
+<button  id="submit">submit</button>
