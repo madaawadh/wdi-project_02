@@ -1,28 +1,66 @@
 <!DOCTYPE html>
 <html>
+
   <head>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>CeliacProject</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <link href="https://fonts.googleapis.com/css?family=Black+Han+Sans|Patrick+Hand|Righteous" rel="stylesheet">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" />
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
+
   <body>
 
+  <div class="top">
+  <div class="iframe">
+    <iframe src="http://free.timeanddate.com/clock/i6iz31yb/n214/fs18/fcfff/tc112675/ftb/tt0/tw0/tm1/ts1/tb4" frameborder="0" width="113" height="44"></iframe>
+  </div>
+  <header>
+  <div class="logo">
+    <%= image_tag 'logo.png' %>
+  </div>
   <nav>
-    <% if user_signed_in? %>
-      <a href="#"> <%= link_to "Home", root_path %></a>
+      <%= link_to(root_path) do %> 
+    <button class="header-button">Home</button>
+    <% end %>
 
-    <a href="#"> <%= link_to "Log Out", destroy_user_session_path, method: :delete %> </a>
-      <% else %>
-      <a href="#"><%= link_to "Log in", new_user_session_path %> </a>
-      <a href="#"><%= link_to "Sign Up", new_user_registration_path %> </a>
-    <% end %> 
-      </nav>
-      <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+       
+
+    <%= link_to(recipes_path) do %> 
+      <button class="header-button">Recipes</button>
+    <% end %>
+
+    <%= link_to(products_path) do %> 
+    <button class="header-button">Products</button>
+    <% end %>
+
+    <%= link_to "/contact" do %> 
+    <button class="header-button">Contact</button>
+    <% end %>
+  
+
+  </nav>
+ 
+</header>
+
+
+<div class="middle">
     <%= yield %>
+  
+</div>
+
+<footer>
+  <p> &copy; 2018 <br>By: Mada Alwuthaynani, Njod Alnasser and Sarah Alfadly  </p>
+	<p>Follow Us: <a href="#" class="fa fa-snapchat-ghost"></a>
+<a href="#" class="fa fa-twitter"></a>
+<a href="#" class="fa fa-instagram"></a></p>
+</footer>
+
   </body>
 </html>

@@ -22,6 +22,9 @@ Rails.application.routes.draw do
   resources :recipes
   resources :ingredients
   resources :tags
+  get "/contact", to: "messages#new"
+  resources :messages, only: [:new, :create]
+  # post "messages#create"
   root "pages#home"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
