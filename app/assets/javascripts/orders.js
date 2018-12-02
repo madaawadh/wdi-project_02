@@ -6,9 +6,9 @@ function responseToJSON(response) {
     return response.json();
 }
 
-function updateOrder(id) {
+function updateOrder(id,price) {
     const params = {
-        content: true
+        content: true,price: price
     };
 
     fetch(`/orders/${id}`, {
@@ -33,8 +33,9 @@ function updateOrder(id) {
             console.log(data);
         });
 }
-function update(){
-    const btn=document.querySelector(".btn");
-    console.log(btn.id);
-    updateOrder(btn.id);
+function update() {
+    const btn = document.querySelector(".btn");
+    const price = document.querySelector("#totalprice");
+    console.log(price.innerHTML);
+    updateOrder(btn.id, price.innerHTML);
 }

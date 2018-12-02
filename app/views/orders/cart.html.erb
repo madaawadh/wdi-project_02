@@ -1,0 +1,14 @@
+<%if current_user.orders.last.completed==false %>
+<% totalPrice=0 %>
+<% current_user.orders.last.items.each do |i| %>
+Title: <%= i.product.title %>
+Quantity: <%= i.quantity %>
+Price: <%= i.price %>
+<p ><% totalPrice+=i.price %></p>
+<%end %>
+<div id="totalprice"><%= totalPrice  %> Rs</div>
+<button onclick="update()" class="btn" id=<%= Order.last.id %> >Done</button>
+<%end%>
+
+
+

@@ -13,3 +13,17 @@
  *= require_tree .
  *= require_self
  */
+ input#search{
+    background:none;
+    border: 4px solid whitesmoke;
+    padding:5px 10px;
+    outline:none;
+    color:black;
+    font-family: monospace;
+}
+input#search::placeholder{
+color:white;
+}
+.continer{
+    text-align:center;
+}
