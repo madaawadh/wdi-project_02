@@ -1,2 +1,18 @@
 <h1>Products#index</h1>
+
 <p>Find me in app/views/products/index.html.erb</p>
+  <nav>
+    <% if user_signed_in? %>
+      <a href="#"> <%= link_to "Home", root_path %></a>
+
+    <a href="#"> <%= link_to "Log Out", destroy_user_session_path, method: :delete %> </a>
+      <% else %>
+      <a href="#"><%= link_to "Log in", new_user_session_path %> </a>
+      <a href="#"><%= link_to "Sign Up", new_user_registration_path %> </a>
+    <% end %> 
+      </nav>
+      <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+</div>
+</div>
+</div>
