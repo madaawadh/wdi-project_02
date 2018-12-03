@@ -1,34 +1,26 @@
-<<<<<<< HEAD
-<h1>Products#index</h1>
-
-<p>Find me in app/views/products/index.html.erb</p>
-  <nav>
-    <% if user_signed_in? %>
-      <a href="#"> <%= link_to "Home", root_path %></a>
-
-    <a href="#"> <%= link_to "Log Out", destroy_user_session_path, method: :delete %> </a>
-      <% else %>
-      <a href="#"><%= link_to "Log in", new_user_session_path %> </a>
-      <a href="#"><%= link_to "Sign Up", new_user_registration_path %> </a>
-    <% end %> 
-      </nav>
-      <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-</div>
-</div>
-</div>
-<<<<<<< HEAD
-=======
-=======
-<h1>All Products</h1>
-
-<ul>
-
-<% @products.each do |p| %>
-<li>
-<%= link_to p.title, product_path(p) %>
-</li>
+<div>
+<% if user_signed_in? %>
+<% if current_user.is_admin == true %>
+   <button><%= link_to "Add New Product", new_product_path, class: "links" %></button>
 <% end %>
-</ul>
->>>>>>> e4ebd100650eb4af637f2339be7d591d119732df
->>>>>>> 33048a4af090a8bd54f61533fc49ca0fcd7422dd
+   <button><%= link_to "Cart", orders_cart_path, class: "links" %></button>
+<%end %>
+</div>
+
+
+<div class="cards">
+<% @products.each do |p| %>
+
+<div class="card">
+  <div class="card-image">
+        <%= image_tag p.image %>
+        </div>
+
+         <div class="card-action">
+         <%= link_to p.title, product_path(p) %>
+         <strong class="card_price"> <%=  p.price %> SAR </strong>
+        </div>
+</div>
+<% end %>
+</div>
+

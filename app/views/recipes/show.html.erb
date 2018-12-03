@@ -1,12 +1,25 @@
 
+<div class="form_center">
+<div class="card card-width">
+<h3><%= @recipe.title %></h3>
+<hr>
+<img src=<%= @recipe.image %> class="show_image_size">
 
-<p><%= @recipe.title %></p>
+<div>
+<h4>Ingredients</h4>
+<ul class="in_left">
 <% @recipe.ingredients.each do |i| %>
-<%= i.quantity %> <%= i.name %>
-<%end %>
-<img src=<%= @recipe.image %> >
-<p><%= @recipe.steps %></p>
-<p><%= @recipe.title %></p>
+<li><%= i.quantity %> <%= i.name %></li>
+<% end %>
+</ul>
+</div>
+<hr>
+<h4>Method</h4>
+<p class="in_left "><%= @recipe.steps %></p>
+
 <% @recipe.tags.each do |t| %>
 <%= link_to t.tag, tag_path(t) %>
 <% end %>
+
+</div>
+</div>

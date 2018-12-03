@@ -22,14 +22,28 @@ function responseToJson(response) {
     return response.json();
 }
 function addingredints() {
-    const form = document.querySelector("#recipe_form");
+    const table = document.querySelector("#ing_table");
+    var tr = table.insertRow(-1);
+    var cell1 = tr.insertCell(-1);
+    var cell2 = tr.insertCell(-1);
+
+
     var name = document.createElement("input");
     name.type = "text";
     var quan = document.createElement("input");
-    quan.type = "text";
+    quan.type = "number";
+    quan.value = 1;
+    quan.setAttribute("class", "quant");
+
     // input.className = "css-class-name"; // set the CSS class
-    form.appendChild(name);
-    form.appendChild(quan);
+    // var br = document.createElement("br");
+    // table.appendChild(tr);
+    // tr.appendChild(name);
+    // tr.appendChild(quan);
+    // form.appendChild(br);
+    cell1.appendChild(name);
+    cell2.appendChild(quan);
+
     ingredints.push({ name: name, quan: quan })
 }
 
@@ -47,7 +61,7 @@ function addNewRecipe(title, steps, image, a) {
             for (i = 0; i < ingredints.length; i++) {
                 addNewIngredient(ingredints[i].name, ingredints[i].quan, data.id);
             }
-            console.log(data);
+            location.href = `/recipes/${data.id}`;
         });
 }
 function addNewIngredient(name, quan, id) {
@@ -72,8 +86,8 @@ window.onload = function () {
     const input = document.querySelector("#title");
     const input2 = document.querySelector("#steps");
     const input3 = document.querySelector("#image");
-    const name0 = document.querySelector("#name");
-    const quan0 = document.querySelector("#quan");
+    const name0 = document.querySelector("#name1");
+    const quan0 = document.querySelector("#quan1");
     const name1 = document.querySelector("#name2");
     const quan1 = document.querySelector("#quan2");
     const name2 = document.querySelector("#name3");
@@ -120,14 +134,16 @@ window.onload = function () {
             addNewRecipe(input.value, input2.value, input3.value, a);
         });
     }
+   
     const form1 = document.querySelector("#gluten");
 
     const input1 = document.querySelector("#search");
+    // if (submit) {
     form1.addEventListener("submit", function (ev) {
-        console.log(28)
         ev.preventDefault();
         getGip(input1.value);
     });
+// }
 
 };
 

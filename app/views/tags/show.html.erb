@@ -1,3 +1,12 @@
+<div class="cards">
 <% @tag.recipes.each do |recipe| %>
-<h3 ><%= link_to recipe.title, recipe %></h3>
+ <div class="card">
+        <div class="card-image">
+        <%= image_tag recipe.image %>
+        </div>
+        <div class="card-action"> 
+<%= link_to recipe.title, recipe %>
+   </div>
+      </div>
 <%end%>
+</div>

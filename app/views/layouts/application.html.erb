@@ -8,7 +8,7 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <link href="https://fonts.googleapis.com/css?family=Black+Han+Sans|Patrick+Hand|Righteous" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" />
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -16,45 +16,54 @@
 
 
   <body>
-
   <div class="top">
   <div class="iframe">
     <iframe src="http://free.timeanddate.com/clock/i6iz31yb/n214/fs18/fcfff/tc112675/ftb/tt0/tw0/tm1/ts1/tb4" frameborder="0" width="113" height="44"></iframe>
+      <div class="sign">
+      <% if user_signed_in? %>
+        <%= link_to "Logout", destroy_user_session_path, method: :delete  %>
+      <% else %>
+        <%= link_to "Login", new_user_session_path %>
+        <%= link_to "Signup", new_user_registration_path %>
+      <% end %>
+      </div>
   </div>
   <header>
   <div class="logo">
     <%= image_tag 'logo.png' %>
   </div>
-  <nav>
-      <%= link_to(root_path) do %> 
-    <button class="header-button">Home</button>
-    <% end %>
 
-       
 
-    <%= link_to(recipes_path) do %> 
-      <button class="header-button">Recipes</button>
-    <% end %>
 
-    <%= link_to(products_path) do %> 
-    <button class="header-button">Products</button>
-    <% end %>
-
-    <%= link_to "/contact" do %> 
-    <button class="header-button">Contact</button>
-    <% end %>
-  
-
+  <nav>    
+   <button class="header-button"><%= link_to "Home", root_path, class: "links" %></button>
+    <button class="header-button"><%= link_to "Recipes", recipes_path, class: "links" %></button>
+    <button class="header-button"><%= link_to "Products", products_path, class: "links" %></button>
+    <button class="header-button"><%= link_to "Contact", "/contact", class: "links" %></button>
+    <button class="header-button"><%= link_to "Search", pages_search_path, class: "links" %></button>
   </nav>
  
 </header>
-
-
+ <!-- <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>-->
 <div class="middle">
-    <%= yield %>
-  
-</div>
 
+<%= yield %>
+
+ <!-- /* <div class="card">
+        <div class="card-image">
+          <%= image_tag "logo.png"%>
+          <span class="card-title" style="color: black">Card Title</span>
+        </div>
+        <div class="card-content">
+          <p>I am a very simple card. I am good at containing small bits of information.
+          I am convenient because I require little markup to use effectively.</p>
+        </div>
+        <div class="card-action">
+          <a href="#">This is a link</a>
+        </div>
+      </div> */-->
+</div>
 <footer>
   <p> &copy; 2018 <br>By: Mada Alwuthaynani, Njod Alnasser and Sarah Alfadly  </p>
 	<p>Follow Us: <a href="#" class="fa fa-snapchat-ghost"></a>

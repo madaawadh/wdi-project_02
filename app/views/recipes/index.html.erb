@@ -1,10 +1,46 @@
-<h1>All Recipes</h1>
+<div class="new_recipe">
+<% if user_signed_in? %>
+   <%= link_to "", new_recipe_path, class: "links fas fa-plus-circle fa-3x icons" %>
+<% end %>
+</div>
 
-<ul>
+<div class="cards">
 
 <% @recipes.each do |r| %>
-<li>
-<%= link_to r.title, recipe_path(r) %>
-</li>
+
+
+
+ <div class="card">
+        <div class="card-image">
+        <%= image_tag r.image %>
+        <!--  <span class="card-title" style="color: black">Card Title</span>-->
+        </div>
+       <!-- <div class="card-content">
+          <span class="card-title" style="color: black">Card Title</span>
+        </div>-->
+        <div class="card-action">
+         <!-- <a href="#">This is a link</a>-->
+          <%= link_to r.title, recipe_path(r) %>
+        </div>
+      </div>
+
+
+
+<!--<div class="card">
+        <div class="card-image">
+          <%#= image_tag "logo.png"%>
+          <img src=<% r.image %> />
+          <span class="card-title"><%= link_to r.title, recipe_path(r) %></span>
+        </div>
+        <div class="card-content">
+          <p>I am a very simple card. I am good at containing small bits of information.
+          I am convenient because I require little markup to use effectively.</p>
+        </div>
+        <div class="card-action">
+          <a href="#">This is a link</a>
+        </div>
+      </div> -->
+
 <% end %>
-</ul>
+</div>
+ 

@@ -1,24 +1,48 @@
+<div class="form_center">
 
+<label for="title">Title:</label><input type="text" id="title"><br>
+<label for="image">Image URL:</label><input type="text" size="50" id="image"><br>
 
-Title: <input type="text" id="title">
-Steps: <input type="text" id="steps">
-image: <input type="text" id="image">
-<button onclick="addingredints()">more Ingredients</button>
 <div id="recipe_form">
-<span>Ingrediednt </span> <span> quant </span> <br>
+<!--<span>Ingrediednt </span> <span> quant </span> <br>
  <input type="text" id="name">
-<input type="text" id="quan"> <br>
+<input type=number value=1 id="quan" class="quant"> <br>
  <input type="text" id="name2">
-<input type="text" id="quan2"> <br>
+<input type=number value=1 id="quan2" class="quant"> <br>
  <input type="text" id="name3">
- <input type="text" id="quan3"><br>
+ <input type=number value=1 id="quan3" class="quant"><br>
  <input type="text" id="name4">
- <input type="text" id="quan4"><br>
+ <input type=number value=1 id="quan4" class="quant"><br>-->
+
+<table id="ing_table" cellspacing="0" cellpadding="0">
+<th>Ingredient</th>
+<th>Quantity</th>
+<% counter = 1 %>
+<% while counter <= 4 %>
+<tr>
+<td><input type="text" id="name<%= counter %>"></td>
+<td><input type=number value=1 id="quan<%= counter %>" class="quant"></td>
+</tr>
+<% counter += 1 %>
+<% end %>
+</table>
+
 </div>
+
+ <button onclick="addingredints()" class="ing_button">more Ingredients</button>
+
+
+<label for="steps">Steps: </label><textarea id="steps"></textarea><br>
+
+ 
+
+
 <div>
 
 <% Tag.all.each do |t| %>
 <%= t.tag %><input type="checkbox" id=<%= t.id %> class=<%= t.tag %> >
 <% end %>
 </div>
-<button  id="submit">submit</button>
+<button id="submit">submit</button>
+
+</div>

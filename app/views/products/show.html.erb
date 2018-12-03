@@ -1,23 +1,32 @@
 
-
+<div class="form_center">
+<div class="card card-width">
 <p><%= @product.title %></p>
-<img src=<%= @product.description %>>
-<p id="price"><%= @product.price %></p>
-<p><%= @product.image %></p>
+<img src=<%= @product.image %> class="show_image_size">
+<p >Price: <span id="price"><%= @product.price %></span> RS</p>
+Description
+<p><%= @product.description %></p>
 
 
-<button onclick="fun()">add</button>
-<p id="quant"></p>
+<strong>Quantity: <span id="quant">0</span></strong>
+
+<i onclick="fun() "class="links fas fa-plus-circle fa-2x"></i>
 
 <p id="productTry" hidden><%= @product.id %></p>
-<p id="totalPrice"></p>
+
+<p >Total Price:<span id="totalPrice">0</span></p>
+
+
 
 
 <div class="order">
+<% if user_signed_in? %>
 <%if current_user.orders.length===0||current_user.orders.last.completed==true %>
-<button onclick="cart()">Add</button>
+<button onclick="cart()">Add To Cart</button>
 <% else %>
-<button onclick="order()" class="sameorder" id=<%= current_user.orders.last.id %>>Add</button>
+<button onclick="order()" class="sameorder" id=<%= current_user.orders.last.id %>>Add To Cart</button>
 <% end %>
-
+<% end %>
+</div>
+</div>
 </div>

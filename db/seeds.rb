@@ -13,8 +13,11 @@ Product.destroy_all
 Tag.destroy_all
 Recipe.destroy_all
 Ingredient.destroy_all
+Message.destroy_all
 
 tags = ["Breakfast", "Lunch", "Dinner", "Snack", "Dessert"]
 tags.each do |t|
   Tag.create(tag: t)
 end
+
+user = User.create! :username => "admin", :email => "admin@gmail.com", :password => "123123", :password_confirmation => "123123", :is_admin => true
