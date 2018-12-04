@@ -38,7 +38,9 @@ function update() {
     const price = document.querySelector("#totalprice");
     console.log(price.innerHTML);
     updateOrder(btn.id, price.innerHTML);
-    swal("Good job!", "You clicked the button!", "success");
-
-    // location.reload();
+    swal("Good job!", "You clicked the button!", "success").then((willDelete) => {
+        if (willDelete) {
+            location.href = `/products`;
+        } 
+    });
 }

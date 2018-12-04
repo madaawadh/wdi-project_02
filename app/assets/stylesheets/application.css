@@ -16,6 +16,7 @@
 
  body {
    background-color: #f2f2f2;
+   font-family: 'Muli', sans-serif;
  }
 
  html, body {
@@ -395,6 +396,9 @@ a {
   margin-left: 100px; */
 }
 
+
+
+
 .card_price {
   margin-left: 180px;
 }
@@ -437,6 +441,7 @@ a {
 .product_name {
   font-weight: bold;
   font-size: 30px;
+  font-family: 'Crete Round', serif;
 }
 
 .panel_price {
@@ -472,3 +477,8 @@ panel_price i {
 .product_p_q {
   font-size: 20px;
 }
+
+.fa-plus-circle:before{
+  cursor: pointer;
+}
+

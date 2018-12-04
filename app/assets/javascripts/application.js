@@ -200,7 +200,7 @@ function cart(event) {
         total += arr.price;
     }
     addNewOrder(totalPrice, quantity, productID);
-    // location.reload();
+    location.reload();
 }
 
 function responseToJson(response) {
@@ -220,6 +220,7 @@ function addNewItem(quantity, price, product_id, order_id) {
         .then(data => {
             // addNewIngredient(item, item2, data.id)
             console.log(data);
+            location.href = `/products/`;
         });
 }
 

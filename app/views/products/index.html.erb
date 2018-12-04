@@ -5,7 +5,17 @@
 <% end %>
    <!--<button><%= link_to "Cart", orders_cart_path, class: "links" %></button>-->
 <%end %>
-<button><%= link_to "Cart", orders_cart_path, class: "links" %></button>
+<!--<button><%= link_to "Cart", orders_cart_path, class: "links" %></button>-->
+<div class="fa-1x">
+<span class="fa-layers fa-fw" >
+   <% if user_signed_in? %>
+  <%if current_user.orders.last.completed==false %> 
+   <span class="links fa-layers-counter icons numberss" style="background:Tomato"> &nbsp; <%= current_user.orders.last.items.length %> &nbsp;   </span>
+  <%end %>
+   <%= link_to "", orders_cart_path, class: "links fas fa-shopping-basket fa-3x icons" %>
+  <%end %>
+  </span>
+  </div>
 </div>
 
 
@@ -22,11 +32,11 @@
      <p class="product_name"><%= p.title %></p>
 
      <!--<p class="panel_price"> <span id="price"><%=  p.price %> </span>SAR </p>-->
-     <p >Price:<span id="totalPrice"><%=  p.price %></span></p>
+     <p class="product_p_q">Price: <span id="totalPrice"><%=  p.price %></span></p>
      
     <p>
-     <strong>Quantity: <span id="quant">1</span></strong>
-     <i onclick="fun(event)" class="links fas fa-plus-circle fa-lg"></i>
+     <span class="product_p_q">Quantity: <span id="quant">1</span></span>
+      <i onclick="fun(event)" class="links fas fa-plus-circle fa-lg"></i>
      </p>
 
      <p id="productTry" hidden><%= p.id %></p>

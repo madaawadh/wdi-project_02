@@ -1,5 +1,4 @@
 <br><br>
-<%= console%>
 <% if user_signed_in? %>
 <% if current_user.orders.length != 0 %>
 <% if current_user.orders.last.completed == false %>
@@ -15,8 +14,8 @@
 
     <div class="panel-action">
      <p class="product_name"><%= i.product.title %></p>
-     <p class="product_p_q"><strong>Quantity:</strong> <%= i.quantity %></p>
-     <p><strong class="product_p_q">Price:</strong><span class="product_p_q" id="totalPrice"> <%= i.price %></span></p>
+     <p class="product_p_q">Quantity: <%= i.quantity %></p>
+     <p class="product_p_q">Price: <span class="product_p_q" id="totalPrice"> <%= i.price %></span></p>
     </div>
   </div>
 
