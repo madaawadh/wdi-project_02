@@ -1,4 +1,5 @@
-<div>
+
+<div >
 <% if user_signed_in? %>
 <% if current_user.is_admin == true %>
    <button><%= link_to "Add New Product", new_product_path, class: "links" %></button>
@@ -8,12 +9,15 @@
 <!--<button><%= link_to "Cart", orders_cart_path, class: "links" %></button>-->
 <div class="fa-1x">
 <span class="fa-layers fa-fw" >
-   <% if user_signed_in? %>
+  
+   <%= link_to "", orders_cart_path, class: "links fas fa-shopping-basket fa-3x icon" %>
+    <% if user_signed_in? %>
   <%if current_user.orders.last.completed==false %> 
    <span class="links fa-layers-counter icons numberss" style="background:Tomato"> &nbsp; <%= current_user.orders.last.items.length %> &nbsp;   </span>
   <%end %>
-   <%= link_to "", orders_cart_path, class: "links fas fa-shopping-basket fa-3x icons" %>
   <%end %>
+  <br>
+  <br>
   </span>
   </div>
 </div>

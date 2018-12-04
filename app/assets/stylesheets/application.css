@@ -290,6 +290,14 @@ color:black;
 .icons {
   margin-left: 1200px;
 }
+.numberss{
+position: absolute;
+left: 110px;
+}
+.icon {
+position: absolute;
+left: 1280px;
+}
 
 .card {
  border-radius: 1px 17px 0 0;
