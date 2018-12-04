@@ -73,6 +73,12 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  display: flex;
+  flex-direction: column;
+}
+
+.middle {
+  flex-grow: 1;
 }
 
 div .comment .img-name {
