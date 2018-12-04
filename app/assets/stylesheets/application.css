@@ -44,7 +44,7 @@ header {
   font-size: 20px;
   /* transition: background 7.5s, color 1.5s; */
   text-transform: uppercase;
-  font-family: serif;
+  /* font-family: serif; */
   margin: 20px;
   font-family: "Black Han Sans", sans-serif;
 }
@@ -83,7 +83,7 @@ div .comment .img-name {
   background-color: rgba(252, 245, 245, 0.021);
   color: #112675;
   font-size: 30px;
-  font-family: "Patrick Hand", cursive;
+  /* font-family: "Patrick Hand", cursive; */
   background-color: rgb(250, 245, 245);
   width: 900px;
   padding-right: 56px;
@@ -93,7 +93,7 @@ div .comment .img-name {
 .form-container {
   color: #112675;
   font-size: 30px;
-  font-family: "Black Han Sans", sans-serif;
+  /* font-family: "Black Han Sans", sans-serif; */
   /* width: 100px; */
   padding-right: 56px;
   margin: 35px;
@@ -125,7 +125,7 @@ footer {
   left: 0;
   bottom: 0;
   width: 100%;
-  font-family: "Righteous", cursive;
+  /* font-family: "Righteous", cursive; */
   /* display: inline; */
 }
 footer p {
@@ -155,7 +155,7 @@ footer p {
   bottom: 8px;
   width: 100%;
   text-align: center;
-  font-family: "Patrick Hand", cursive;
+  /* font-family: "Patrick Hand", cursive; */
 }
 .text2 {
   color: #ffe607;
@@ -165,7 +165,7 @@ footer p {
   bottom: 8px;
   width: 100%;
   text-align: center;
-  font-family: "Patrick Hand", cursive;
+  /* font-family: "Patrick Hand", cursive; */
 }
 .text3 {
   color: white;
@@ -175,7 +175,7 @@ footer p {
   bottom: 8px;
   width: 100%;
   text-align: center;
-  font-family: "Patrick Hand", cursive;
+  /* font-family: "Patrick Hand", cursive; */
 }
 
 /* Number text (1/3 etc) */
@@ -271,7 +271,7 @@ input#search {
  border: 4px solid black;
  padding: 5px 20px;
  outline: none;
- font-family: monospace;
+ /* font-family: monospace; */
 }
 
 input#search::placeholder{
