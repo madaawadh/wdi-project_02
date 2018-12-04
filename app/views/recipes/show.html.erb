@@ -18,7 +18,7 @@
 <p class="in_left "><%= @recipe.steps %></p>
 
 <% @recipe.tags.each do |t| %>
-<%= link_to t.tag, tag_path(t) %>
+<span><%= link_to t.tag, tag_path(t) %> | </span>
 <% end %>
 
 </div>
