@@ -482,3 +482,17 @@ panel_price i {
   cursor: pointer;
 }
 
+.swal-button {
+  padding: 0%;
+  padding-right: 30px;
+  padding-left: 30px;
+  /* background-color: #112675;
+  color: white; */
+}
+
+.your_order {
+  text-align: center;
+  font-weight: bold;
+  color: #112675;
+}
+
