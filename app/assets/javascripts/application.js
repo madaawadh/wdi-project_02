@@ -138,12 +138,12 @@ window.onload = function () {
     const form1 = document.querySelector("#gluten");
 
     const input1 = document.querySelector("#search");
-    // if (submit) {
+    if (form1) {
     form1.addEventListener("submit", function (ev) {
         ev.preventDefault();
         getGip(input1.value);
     });
-// }
+}
 
 };
 
@@ -151,38 +151,56 @@ window.onload = function () {
 let q = 1;
 let arr = [];
 let totalprice;
-function fun() {
-    pp = document.querySelector("#productTry");
+let test;
+
+function fun(event) {
+    // debugger;
+    // pp = document.querySelector("#productTry");
+    pp = event.target.parentNode.parentNode.querySelector("#productTry");
     console.log(pp);
-    const price = document.querySelector("#price");
-    p = price.innerHTML;
+    let p=event.target.parentNode.parentNode.querySelector("#price");
+    // let price = event.target.parentNode.parentNode.querySelector("#price");
+    // p = price.innerHTML;
+    // console.log(p);
 
+    const quant = event.target.parentNode.parentNode.querySelector("#quant");
+    const price1 = event.target.parentNode.parentNode.querySelector("#totalPrice");
 
-    const quant = document.querySelector("#quant");
-    const price1 = document.querySelector("#totalPrice");
-    q = ++q;
-    quant.innerHTML = q;
+    
+    quant.innerHTML = parseFloat(quant.innerHTML) + 1;
 
-    price1.innerHTML = p * q;
-    totalprice = p * q;
+    price1.innerHTML = parseFloat(quant.innerHTML) * parseFloat(p.innerHTML);
+    // totalprice = p * q;
+ 
 
 }
 let total = 0;
-function order() {
-    const order1 = document.querySelector(".sameorder");
-    console.log(order1);
-    addNewItem(q, totalprice, pp.innerHTML, order1.id);
+function order(event) {
+    console.log(22)
+    const totalPrice = parseFloat(event.target.parentNode.parentNode.querySelector("#totalPrice").innerHTML);
+    const quantity = parseFloat(event.target.parentNode.parentNode.querySelector("#quant").innerHTML);
+    const productID = event.target.parentNode.parentNode.querySelector("#productTry").innerHTML;
+    const orderID = event.target.parentNode.parentNode.querySelector(".sameorder").id
+    addNewItem(quantity, totalPrice, productID, orderID);
+    // pp = event.target.parentNode.parentNode.querySelector("#productTry");
+    // const order1 = document.querySelector(".sameorder");
+    // debugger;
+    // console.log(order1);
+    // addNewItem(q, totalprice, pp.innerHTML, order1.id);
 }
-function cart() {
-    // addNewItem(q, totalprice, pp.innerHTML);
+function cart(event) {
+    const totalPrice = parseFloat(event.target.parentNode.parentNode.querySelector("#totalPrice").innerHTML);
+    const quantity = parseFloat(event.target.parentNode.parentNode.querySelector("#quant").innerHTML);
+    const productID = event.target.parentNode.parentNode.querySelector("#productTry").innerHTML;
+    // const orderID = event.target.parentNode.parentNode.querySelector(".sameorder").id
     arr.push({
-        quant: q, price: totalprice, p_id: pp.innerHTML
+        quant: quantity, price: totalPrice, p_id: productID
     });
     for (let i = 0; i > arr.length; i++) {
         total += arr.price;
     }
-    addNewOrder(totalprice);
-    location.reload();
+    addNewOrder(totalPrice, quantity, productID);
+    // location.reload();
 }
 
 function responseToJson(response) {
@@ -205,13 +223,13 @@ function addNewItem(quantity, price, product_id, order_id) {
         });
 }
 
-function addNewOrder(price) {
+function addNewOrder(price, quantity, productID) {
     // someSessionVariable = `@Session[${0}]`;
     let params = { price: price };
     fetch("/orders", {
         method: "POST",
         headers: {
-            "content-Type": "application/json",
+            "Content-Type": "application/json",
             Accept: "application/json"
         },
         body: JSON.stringify(params)
@@ -219,7 +237,8 @@ function addNewOrder(price) {
         .then(data => {
             console.log(data);
             orderId = data.id
-            addNewItem(q, totalprice, pp.innerHTML, orderId);
+            addNewItem(quantity, price, productID, orderId  );
+            // addNewItem(q, totalprice, pp.innerHTML, orderId);
         });
 }
 // const apiKey = "HbAQEbnB7ao2wMDmoRPOZQsfVSDkAKNs";

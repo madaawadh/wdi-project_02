@@ -1,16 +1,37 @@
+<br><br>
+<%= console%>
 <% if user_signed_in? %>
-<%if current_user.orders.length !=0%>
-<%if current_user.orders.last.completed==false%>
-<% totalPrice=0 %>
-<% current_user.orders.last.items.each do |i| %>
-Title: <%= i.product.title %>
-Quantity: <%= i.quantity %>
-Price: <%= i.price %>
-<p ><% totalPrice+=i.price %></p>
-<%end %>
-<div id="totalprice"><%= totalPrice  %> Rs</div>
-<button onclick="update()" class="btn" id=<%= Order.last.id %> >Done</button>
-<%end%>
+<% if current_user.orders.length != 0 %>
+<% if current_user.orders.last.completed == false %>
 
-<%end %>
-<%end %>
+<% totalPrice = 0 %>
+
+<div class="cards" id="product_card">
+<% current_user.orders.last.items.each do |i| %>
+  <div class="panel">
+    <div class="panel-image">
+      <%= image_tag i.product.image %>
+    </div>
+
+    <div class="panel-action">
+     <p class="product_name"><%= i.product.title %></p>
+     <p class="product_p_q"><strong>Quantity:</strong> <%= i.quantity %></p>
+     <p><strong class="product_p_q">Price:</strong><span class="product_p_q" id="totalPrice"> <%= i.price %></span></p>
+    </div>
+  </div>
+
+    <p><% totalPrice+=i.price %></p>
+  <hr>
+<% end %>
+
+
+
+</div>
+<% end %>
+<% end %>
+<% end %>
+
+<div class="order_done">
+<p id="totalprice">Total Price: <%= totalPrice %> SAR</p>
+<button onclick="update()" class="btn" id=<%= current_user.orders.last.id %>>Done</button>
+</div>

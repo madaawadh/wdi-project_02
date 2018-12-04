@@ -3,24 +3,50 @@
 <% if current_user.is_admin == true %>
    <button><%= link_to "Add New Product", new_product_path, class: "links" %></button>
 <% end %>
-   <button><%= link_to "Cart", orders_cart_path, class: "links" %></button>
+   <!--<button><%= link_to "Cart", orders_cart_path, class: "links" %></button>-->
 <%end %>
+<button><%= link_to "Cart", orders_cart_path, class: "links" %></button>
 </div>
 
 
-<div class="cards">
+<div class="cards" id="product_card">
+<% counter = 0 %>
 <% @products.each do |p| %>
+  <div class="panel">
+    <div class="panel-image">
+      <%= image_tag p.image %>
+    </div>
 
-<div class="card">
-  <div class="card-image">
-        <%= image_tag p.image %>
-        </div>
+    <div class="panel-action">
+     <!-- <%= link_to p.title, product_path(p) %> -->
+     <p class="product_name"><%= p.title %></p>
 
-         <div class="card-action">
-         <%= link_to p.title, product_path(p) %>
-         <strong class="card_price"> <%=  p.price %> SAR </strong>
-        </div>
-</div>
+     <!--<p class="panel_price"> <span id="price"><%=  p.price %> </span>SAR </p>-->
+     <p >Price:<span id="totalPrice"><%=  p.price %></span></p>
+     
+    <p>
+     <strong>Quantity: <span id="quant">1</span></strong>
+     <i onclick="fun(event)" class="links fas fa-plus-circle fa-lg"></i>
+     </p>
+
+     <p id="productTry" hidden><%= p.id %></p>
+       <p id="price" hidden><%= p.price %></p>
+
+     <p><%= p.description %></p>
+    </div>
+
+    <div class="add-to-cart">
+      <% if user_signed_in? %>
+    <%if current_user.orders.length===0||current_user.orders.last.completed==true %>
+      <button class="add_to_cart" onclick="cart(event)">Add To Cart</button>
+    <% else %>
+      <button onclick="order(event)" class="sameorder" id=<%= current_user.orders.last.id %>>Add To Cart</button>
+    <% end %>
+    <% end %>
+    </div>
+  </div>
+  <hr>
+  <% counter += 1 %>
 <% end %>
 </div>
 

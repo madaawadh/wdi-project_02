@@ -22,6 +22,6 @@ class OrdersController < ApplicationController
 
   def update
     @order = Order.find_by(id: params[:id])
-    @order.update(total_price: params["price"],completed: params["content"])
+    @order.update(total_price: params["price"], completed: params["content"])
   end
 end

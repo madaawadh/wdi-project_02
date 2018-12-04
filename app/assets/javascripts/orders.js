@@ -38,4 +38,7 @@ function update() {
     const price = document.querySelector("#totalprice");
     console.log(price.innerHTML);
     updateOrder(btn.id, price.innerHTML);
+    swal("Good job!", "You clicked the button!", "success");
+
+    // location.reload();
 }
