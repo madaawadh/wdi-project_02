@@ -126,25 +126,25 @@ recipe.tags << dinner
 
 ####################
 
-recipe = Recipe.create(title: "Mango Salsa Burgers", steps: "Burgers
-Follow package instructions to cook burgers. Toast hamburger buns to taste.
-Place burgers inside buns and evenly top with mango salsa, avocado, cheese or anything else you might like!
-Salsa
-Mix all ingredients together in a bowl.
-Tastes better as it sits; at least 1/2 hour prior to eating is recommended.", image: "https://celiac.org/eat-gluten-free/wp-content/uploads/2017/01/veggie-burgers.jpg", user_id: user.id)
+# recipe = Recipe.create(title: "Mango Salsa Burgers", steps: "Burgers
+# Follow package instructions to cook burgers. Toast hamburger buns to taste.
+# Place burgers inside buns and evenly top with mango salsa, avocado, cheese or anything else you might like!
+# Salsa
+# Mix all ingredients together in a bowl.
+# Tastes better as it sits; at least 1/2 hour prior to eating is recommended.", image: "https://celiac.org/eat-gluten-free/wp-content/uploads/2017/01/veggie-burgers.jpg", user_id: user.id)
 
-Ingredient.create(name: "Burgers", quantity: "2", recipe_id: recipe.id)
-Ingredient.create(name: "Gluten-Free Veggie Burgers or 1/4 lb burgers of your choice", quantity: "4", recipe_id: recipe.id)
-Ingredient.create(name: "Canyon Bakehouse Hamburger Buns", quantity: "4", recipe_id: recipe.id)
-Ingredient.create(name: "Mango Salsa", quantity: "2", recipe_id: recipe.id)
-Ingredient.create(name: "Cup Mango chunks, sliced thinly", quantity: "2", recipe_id: recipe.id)
-Ingredient.create(name: "Cup Red Onion chopped", quantity: "1", recipe_id: recipe.id)
-Ingredient.create(name: "Cup Tomatoes chopped", quantity: "1", recipe_id: recipe.id)
-Ingredient.create(name: "Cup cilantro fresh, chopped", quantity: "1", recipe_id: recipe.id)
-Ingredient.create(name: "Teaspoons Jalapeno Peppers chopped, optional", quantity: "2", recipe_id: recipe.id)
+# Ingredient.create(name: "Burgers", quantity: "2", recipe_id: recipe.id)
+# Ingredient.create(name: "Gluten-Free Veggie Burgers or 1/4 lb burgers of your choice", quantity: "4", recipe_id: recipe.id)
+# Ingredient.create(name: "Canyon Bakehouse Hamburger Buns", quantity: "4", recipe_id: recipe.id)
+# Ingredient.create(name: "Mango Salsa", quantity: "2", recipe_id: recipe.id)
+# Ingredient.create(name: "Cup Mango chunks, sliced thinly", quantity: "2", recipe_id: recipe.id)
+# Ingredient.create(name: "Cup Red Onion chopped", quantity: "1", recipe_id: recipe.id)
+# Ingredient.create(name: "Cup Tomatoes chopped", quantity: "1", recipe_id: recipe.id)
+# Ingredient.create(name: "Cup cilantro fresh, chopped", quantity: "1", recipe_id: recipe.id)
+# Ingredient.create(name: "Teaspoons Jalapeno Peppers chopped, optional", quantity: "2", recipe_id: recipe.id)
 
-recipe.tags << lunch
-recipe.tags << dinner
+# recipe.tags << lunch
+# recipe.tags << dinner
 
 ####################
 
