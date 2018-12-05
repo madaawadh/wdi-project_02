@@ -29,11 +29,38 @@
 
 
 </div>
-<% end %>
-<% end %>
-<% end %>
-
+<div id="map" style="width:500px; height:500px; margin-left:500px"></div>
 <div class="order_done">
 <p id="totalprice">Total Price: <%= totalPrice %> SAR</p>
 <button onclick="update()" class="btn" id=<%= current_user.orders.last.id %>>Done</button>
 </div>
+<% end %>
+<% end %>
+<% end %>
+
+
+<span id="lat" hidden><%= current_user.latitude %></span>
+<span id="long" hidden><%= current_user.longitude %></span>
+
+   <script>
+
+     var map;
+   let lat = document.querySelector("#lat").innerHTML;
+   let long = parseFloat(document.querySelector("#long").innerHTML);
+   console.log(lat);
+   function initMap() {
+       var myLatLng = {lat: <%= current_user.latitude %>, lng: <%= current_user.longitude %>};
+       map = new google.maps.Map(document.getElementById('map'), {
+           center: { lat: <%= current_user.latitude %>, lng: <%= current_user.longitude %> },
+           zoom: 18
+       });
+        var marker = new google.maps.Marker({
+   position: myLatLng,
+   map: map,
+   title: 'Your location!'
+ });
+   }
+   </script>
+   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDo4DxYe2dEhQ_VzpMx5BmYTnEdmJvdH3I
+&callback=initMap"
+   async defer></script>
