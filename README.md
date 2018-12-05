@@ -27,7 +27,7 @@ Things you may want to cover:
 
 ## Description of tech/links
 
-It is a website for those who have Celiac Disease or who want to change their lifestyle. It includes Recipies, Products. Also, you can search for your items.
+It is a website for those who have wheat allergy or who want to change their lifestyle. It includes recipes, Products. Also, you can search for your items.
 
 ## Technology used
 
