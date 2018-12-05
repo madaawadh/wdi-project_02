@@ -68,7 +68,7 @@ Add coconut oil to a pan or wok over medium-high heat.
 Add onion, garlic, ginger, and red pepper flakes and cook for about 3 minutes, until fragrant.
 Add the peas, bell pepper, and pineapple, and cook over high-heat for about 3 minutes, stirring frequently, until the pineapple just starts to caramelize.
 Add the cooked quinoa, cilantro, and salt. Mix well and cook for an additional minute. Serve hot.
-TIP: Quinoa may also be cooked ahead of time and stored in the fridge to cool.", image: "https://www.eatingbirdfood.com/wp-content/uploads/2016/06/Pineapple-Fried-Quinoa-in-Pineapple-Boat-640x640.jpg", user_id: user.id)
+TIP: Quinoa may also be cooked ahead of time and stored in the fridge to cool.", image: "https://celiac.org/eat-gluten-free/wp-content/uploads/2017/12/DoleQuinoa.jpg", user_id: user.id)
 
 Ingredient.create(name: "cup Quinoa uncooked", quantity: "1", recipe_id: recipe.id)
 Ingredient.create(name: "cups Water", quantity: "2", recipe_id: recipe.id)
