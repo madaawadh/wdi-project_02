@@ -52,6 +52,7 @@ Think about the Idea,logic and then build 8 models then coding after that the st
 - Make it in the Arabic Language.
 - Build a Mobile Application.
 - Create online pay.
+- Create barcode scan for the products.
 
 ## Credits
 
