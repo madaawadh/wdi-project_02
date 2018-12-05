@@ -12,7 +12,7 @@
   
    <%= link_to "", orders_cart_path, class: "links fas fa-shopping-basket fa-3x icon" %>
     <% if user_signed_in? %>
-  <%if current_user.orders.last.completed==false %> 
+  <%if current_user.orders.length===0||current_user.orders.last.completed==false %> 
    <span class="links fa-layers-counter icons numberss" style="background:Tomato"> &nbsp; <%= current_user.orders.last.items.length %> &nbsp;   </span>
   <%end %>
   <%end %>
