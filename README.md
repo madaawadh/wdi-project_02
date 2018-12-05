@@ -27,7 +27,7 @@ Things you may want to cover:
 
 ## Description of tech/links
 
-It's a website for those who have wheat allergy or who want to change their lifestyle. It includes recipes, Products. Also, you can search for your items.
+It's a website for those who have wheat allergy or who want to change their lifestyle. It includes Recipes, Products. Also, you can search for your items.
 
 ## Technology used
 
